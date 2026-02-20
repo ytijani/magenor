@@ -1,0 +1,20 @@
+<svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font: 900 32px sans-serif; letter-spacing: -0.05em; }
+    .mark { fill: currentColor; }
+  </style>
+  
+  <g id="logo-mark">
+    <!-- Geometric Industrial Mark (The 'M') -->
+    <path id="m-path" d="M10 45V15H23L32 28L41 15H54V45H44V26L32 42L20 26V45H10Z" fill="currentColor" class="mark"/>
+    
+    <!-- Structural Beam Detail -->
+    <path id="beam-path" d="M58 15V45H62V15H58Z" fill="currentColor" fill-opacity="0.2"/>
+  </g>
+  
+  <!-- MAGENOR Text -->
+  <text id="logo-text" x="70" y="44" fill="currentColor" class="text" font-family="arial">MAGENOR</text>
+  
+  <!-- Subtle Industrial Underline -->
+  <rect id="underline-path" x="10" y="52" width="220" height="1.5" fill="currentColor" fill-opacity="0.1"/>
+</svg>
