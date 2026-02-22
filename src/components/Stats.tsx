@@ -55,16 +55,16 @@ const StatItem: React.FC<{
                 initial={{ scaleX: 0 }}
                 animate={isInView ? { scaleX: 1 } : {}}
                 transition={{ delay: 0.1 + index * 0.1, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="h-[1px] bg-gradient-to-r from-black/15 to-transparent mb-8 origin-left"
+                className="h-[1px] bg-gradient-to-r from-primary/15 to-transparent mb-8 origin-left"
             />
 
             <div className="mb-4">
-                <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[-0.04em] text-black font-display leading-none">
+                <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[-0.04em] text-primary font-display leading-none">
                     {stat.prefix}{count}{stat.suffix}
                 </span>
             </div>
 
-            <span className="text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.2em] text-black/35">
+            <span className="text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.2em] text-primary/35">
                 {stat.label}
             </span>
         </motion.div>
@@ -93,8 +93,8 @@ const Stats: React.FC = () => {
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                                 className="flex items-center gap-4 mb-6"
                             >
-                                <div className="w-12 h-[1px] bg-black/10" />
-                                <span className="text-[11px] font-bold tracking-[0.3em] text-black/40 uppercase">
+                                <div className="w-12 h-[1px] bg-primary/10" />
+                                <span className="text-[11px] font-bold tracking-[0.3em] text-primary/40 uppercase">
                                     Nos Chiffres
                                 </span>
                             </motion.div>
@@ -102,10 +102,10 @@ const Stats: React.FC = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ delay: 0.1, duration: 0.8 }}
-                                className="text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-[-0.03em] leading-[1.05] font-display"
+                                className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-[-0.03em] leading-[1.05] font-display"
                             >
                                 Nous travaillons main <br />
-                                <span className="text-black/15">dans la main pour mener</span> <br />
+                                <span className="text-primary/15">dans la main pour mener</span> <br />
                                 à bien vos projets.
                             </motion.h2>
                         </div>
@@ -124,7 +124,7 @@ const Stats: React.FC = () => {
                 </div>
             </div>
 
-            <div className="w-full h-px bg-black/[0.04]" />
+            <div className="w-full h-px bg-primary/[0.04]" />
         </section>
     );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Truck, Tractor, Building2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -41,7 +41,7 @@ const pillars = [
 ];
 
 const Pillars: React.FC = () => {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [, setHoveredIndex] = useState<number | null>(null);
 
     return (
         <section id="groupe" className="relative bg-white py-32 md:py-48 overflow-hidden">
@@ -56,8 +56,8 @@ const Pillars: React.FC = () => {
                                 viewport={{ once: true }}
                                 className="flex items-center gap-4 mb-8"
                             >
-                                <div className="w-12 h-[1px] bg-black/10" />
-                                <span className="text-[11px] font-bold tracking-[0.3em] text-black/40 uppercase">
+                                <div className="w-12 h-[1px] bg-primary/10" />
+                                <span className="text-[11px] font-bold tracking-[0.3em] text-primary/40 uppercase">
                                     Le Groupe
                                 </span>
                             </motion.div>
@@ -67,10 +67,10 @@ const Pillars: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1, duration: 0.8 }}
-                                className="text-4xl md:text-5xl lg:text-7xl font-bold text-black tracking-[-0.03em] leading-[1.05] font-display"
+                                className="text-4xl md:text-5xl lg:text-7xl font-bold text-primary tracking-[-0.03em] leading-[1.05] font-display"
                             >
                                 Trois piliers <br />
-                                <span className="text-black/15 italic">une seule exigence.</span>
+                                <span className="text-primary/15 italic">une seule exigence.</span>
                             </motion.h2>
 
                             <motion.p
@@ -78,7 +78,7 @@ const Pillars: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2, duration: 0.8 }}
-                                className="text-lg md:text-xl text-black/45 leading-relaxed font-medium max-w-md"
+                                className="text-lg md:text-xl text-primary/45 leading-relaxed font-medium max-w-md"
                             >
                                 De la logistique de transport à l'exécution de chantiers complexes, nous couvrons l'ensemble de la chaîne de valeur du BTP.
                             </motion.p>
@@ -105,8 +105,8 @@ const Pillars: React.FC = () => {
                                                 style={{ backgroundImage: `url(${pillar.image})` }}
                                             />
                                             {/* Overlays */}
-                                            <div className="absolute inset-0 bg-white/95 group-hover:bg-black/40 transition-colors duration-700" />
-                                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-black/60 to-transparent transition-opacity duration-700" />
+                                            <div className="absolute inset-0 bg-white/95 group-hover:bg-primary/40 transition-colors duration-700" />
+                                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary/60 to-transparent transition-opacity duration-700" />
                                         </div>
 
                                         {/* Content */}
@@ -114,27 +114,27 @@ const Pillars: React.FC = () => {
                                             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center w-full">
                                                 {/* Pillar Index & Icon */}
                                                 <div className="md:col-span-2 flex md:flex-col items-center md:items-start gap-4 transition-all duration-700 group-hover:translate-x-4">
-                                                    <span className="text-[10px] font-bold tracking-[0.2em] text-black/20 group-hover:text-white/40 font-display">
+                                                    <span className="text-[10px] font-bold tracking-[0.2em] text-primary/20 group-hover:text-white/40 font-display">
                                                         {pillar.number}
                                                     </span>
-                                                    <div className="w-12 h-12 rounded-2xl bg-black/5 group-hover:bg-white/10 flex items-center justify-center text-black/80 group-hover:text-white transition-all duration-700">
+                                                    <div className="w-12 h-12 rounded-2xl bg-primary/5 group-hover:bg-white/10 flex items-center justify-center text-primary/80 group-hover:text-white transition-all duration-700">
                                                         {pillar.icon}
                                                     </div>
                                                 </div>
 
                                                 {/* Text Content */}
                                                 <div className="md:col-span-10 space-y-2 md:space-y-3 transition-all duration-700 group-hover:translate-x-4">
-                                                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-black group-hover:text-white font-display">
+                                                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-primary group-hover:text-white font-display">
                                                         {pillar.title}
                                                     </h3>
-                                                    <p className="text-sm md:text-base text-black/40 group-hover:text-white/70 max-w-sm font-medium leading-relaxed line-clamp-2 md:line-clamp-none">
+                                                    <p className="text-sm md:text-base text-primary/40 group-hover:text-white/70 max-w-sm font-medium leading-relaxed line-clamp-2 md:line-clamp-none">
                                                         {pillar.description}
                                                     </p>
                                                     <Link to={pillar.link} className="flex items-center gap-3 pt-3 group/btn">
-                                                        <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-black/25 group-hover:text-white/60 transition-colors duration-500">
+                                                        <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-primary/25 group-hover:text-white/60 transition-colors duration-500">
                                                             En savoir plus
                                                         </span>
-                                                        <div className="w-8 h-8 rounded-full border border-black/[0.06] group-hover:border-white/20 flex items-center justify-center text-black/20 group-hover:text-white transition-all duration-500 transform group-hover:translate-x-1">
+                                                        <div className="w-8 h-8 rounded-full border border-primary/[0.06] group-hover:border-white/20 flex items-center justify-center text-primary/20 group-hover:text-white transition-all duration-500 transform group-hover:translate-x-1">
                                                             <ArrowRight size={14} />
                                                         </div>
                                                     </Link>

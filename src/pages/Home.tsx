@@ -8,7 +8,7 @@ import Projects from '../components/Projects';
 
 const Home: React.FC = () => {
     return (
-        <div className="w-full bg-white selection:bg-black selection:text-white">
+        <div className="w-full bg-white selection:bg-primary selection:text-white">
             <Header />
             <main>
                 <Hero />

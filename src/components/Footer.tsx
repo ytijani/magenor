@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <footer className="bg-white text-black relative border-t border-black/5">
+        <footer className="bg-white text-primary relative border-t border-primary/5">
             <div className="px-6 md:px-20 pt-28 md:pt-36 pb-16 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     {/* Top Section - Large CTA */}
@@ -50,23 +50,23 @@ const Footer: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         className="mb-24 md:mb-28"
                     >
-                        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 pb-16 md:pb-20 border-b border-black/[0.06]">
+                        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 pb-16 md:pb-20 border-b border-primary/[0.06]">
                             <div>
-                                <span className="text-[11px] font-bold tracking-[0.3em] text-black/25 uppercase block mb-6">
+                                <span className="text-[11px] font-bold tracking-[0.3em] text-primary/25 uppercase block mb-6">
                                     Contactez-nous
                                 </span>
-                                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-black font-display">
+                                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-primary font-display">
                                     Mener à bien <br />
-                                    <span className="text-black/20">vos projets ensemble.</span>
+                                    <span className="text-primary/20">vos projets ensemble.</span>
                                 </h2>
                             </div>
                             <Link
                                 to="/contact"
-                                className="group flex items-center gap-5 bg-black rounded-full pl-8 pr-2 py-2 hover:bg-black/90 transition-all duration-500 hover:-translate-y-0.5 shrink-0"
+                                className="group flex items-center gap-5 bg-primary rounded-full pl-8 pr-2 py-2 hover:bg-primary/90 transition-all duration-500 hover:-translate-y-0.5 shrink-0"
                             >
                                 <span className="text-white font-bold text-[13px] tracking-tight uppercase px-2">Envoyer un message</span>
                                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
-                                    <ArrowRight size={16} className="text-black" />
+                                    <ArrowRight size={16} className="text-primary" />
                                 </div>
                             </Link>
                         </div>
@@ -89,19 +89,19 @@ const Footer: React.FC = () => {
                             </div>
                             <div className="space-y-4">
                                 <div className="flex items-start gap-3">
-                                    <MapPin size={18} className="text-black/30 shrink-0 mt-1" />
-                                    <p className="text-black/45 text-[14px] leading-relaxed font-medium">
+                                    <MapPin size={18} className="text-primary/30 shrink-0 mt-1" />
+                                    <p className="text-primary/45 text-[14px] leading-relaxed font-medium">
                                         12 Bis Rue de l'Industrie,<br />
                                         91210 Draveil, France
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <Phone size={18} className="text-black/30 shrink-0" />
-                                    <p className="text-black/45 text-[14px] font-medium">+212 789 213 7438</p>
+                                    <Phone size={18} className="text-primary/30 shrink-0" />
+                                    <p className="text-primary/45 text-[14px] font-medium">+212 789 213 7438</p>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <Mail size={18} className="text-black/30 shrink-0" />
-                                    <p className="text-black/45 text-[14px] font-medium">contact@magenor.com</p>
+                                    <Mail size={18} className="text-primary/30 shrink-0" />
+                                    <p className="text-primary/45 text-[14px] font-medium">contact@magenor.com</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -114,13 +114,13 @@ const Footer: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="space-y-8"
                         >
-                            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-black/30">Navigation</h4>
+                            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-primary/30">Navigation</h4>
                             <ul className="space-y-4">
                                 {footerLinks.navigation.map((link) => (
                                     <li key={link.name}>
                                         <Link
                                             to={link.href}
-                                            className="text-[15px] font-bold text-black/60 hover:text-black transition-colors duration-300"
+                                            className="text-[15px] font-bold text-primary/60 hover:text-primary transition-colors duration-300"
                                         >
                                             {link.name}
                                         </Link>
@@ -137,13 +137,13 @@ const Footer: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="space-y-8"
                         >
-                            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-black/30">Informations</h4>
+                            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-primary/30">Informations</h4>
                             <ul className="space-y-4">
                                 {footerLinks.info.map((link) => (
                                     <li key={link.name}>
                                         <a
                                             href={link.href}
-                                            className="text-[15px] font-bold text-black/60 hover:text-black transition-colors duration-300"
+                                            className="text-[15px] font-bold text-primary/60 hover:text-primary transition-colors duration-300"
                                         >
                                             {link.name}
                                         </a>
@@ -160,9 +160,9 @@ const Footer: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.3 }}
                             className="space-y-8"
                         >
-                            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-black/30">Newsletter</h4>
+                            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-primary/30">Newsletter</h4>
                             <div className="space-y-6">
-                                <p className="text-black/45 text-[14px] leading-relaxed font-medium">
+                                <p className="text-primary/45 text-[14px] leading-relaxed font-medium">
                                     Recevez nos dernières actualités et nos nouveaux arrivages machines.
                                 </p>
                                 <form onSubmit={handleSubscribe} className="relative group">
@@ -171,12 +171,12 @@ const Footer: React.FC = () => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="Votre email"
-                                        className="w-full bg-black/[0.03] border border-black/[0.06] rounded-2xl px-6 py-4 text-[14px] font-medium outline-none focus:border-black/20 focus:bg-white transition-all duration-300"
+                                        className="w-full bg-primary/[0.03] border border-primary/[0.06] rounded-2xl px-6 py-4 text-[14px] font-medium outline-none focus:border-primary/20 focus:bg-white transition-all duration-300"
                                         required
                                     />
                                     <button
                                         type="submit"
-                                        className="absolute right-2 top-2 bottom-2 aspect-square bg-black rounded-xl flex items-center justify-center text-white hover:scale-105 transition-transform duration-300"
+                                        className="absolute right-2 top-2 bottom-2 aspect-square bg-primary rounded-xl flex items-center justify-center text-white hover:scale-105 transition-transform duration-300"
                                     >
                                         <ArrowRight size={18} />
                                     </button>
@@ -195,8 +195,8 @@ const Footer: React.FC = () => {
                     </div>
 
                     {/* Bottom Bar */}
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pt-10 border-t border-black/[0.06]">
-                        <p className="text-[11px] font-bold text-black/20 uppercase tracking-[0.1em]">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pt-10 border-t border-primary/[0.06]">
+                        <p className="text-[11px] font-bold text-primary/20 uppercase tracking-[0.1em]">
                             © {new Date().getFullYear()} MAGENOR TP & PL. Tous droits réservés.
                         </p>
 
@@ -207,16 +207,16 @@ const Footer: React.FC = () => {
                                         key={social.name}
                                         whileHover={{ y: -2 }}
                                         href={social.href}
-                                        className="w-9 h-9 rounded-full bg-black/[0.03] flex items-center justify-center text-black/30 hover:bg-black hover:text-white transition-all duration-300"
+                                        className="w-9 h-9 rounded-full bg-primary/[0.03] flex items-center justify-center text-primary/30 hover:bg-primary hover:text-white transition-all duration-300"
                                         aria-label={social.name}
                                     >
                                         {social.icon}
                                     </motion.a>
                                 ))}
                             </div>
-                            <div className="flex items-center gap-6 text-[10px] font-bold text-black/20 uppercase tracking-widest">
-                                <a href="#" className="hover:text-black transition-colors">Mentions Légales</a>
-                                <a href="#" className="hover:text-black transition-colors">Politique Cookies</a>
+                            <div className="flex items-center gap-6 text-[10px] font-bold text-primary/20 uppercase tracking-widest">
+                                <a href="#" className="hover:text-primary transition-colors">Mentions Légales</a>
+                                <a href="#" className="hover:text-primary transition-colors">Politique Cookies</a>
                             </div>
                         </div>
                     </div>

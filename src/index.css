@@ -3,6 +3,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-primary: #000000;
   --color-accent: #0ea5e9;
   --color-accent-dark: #0284c7;
   --font-plus: 'Plus Jakarta Sans', sans-serif;
@@ -34,7 +35,7 @@
   }
 
   ::selection {
-    background-color: #000;
+    background-color: var(--color-primary);
     color: #fff;
   }
 }

@@ -56,7 +56,7 @@ const Loader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
     return (
         <div
             ref={containerRef}
-            className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center overflow-hidden"
+            className="fixed inset-0 z-[9999] bg-primary flex flex-col items-center justify-center overflow-hidden"
         >
             {/* Ambient Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-white opacity-[0.03] blur-[150px] rounded-full pointer-events-none" />

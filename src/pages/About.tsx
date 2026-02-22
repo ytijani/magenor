@@ -10,12 +10,12 @@ const About: React.FC = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
+        <div className="min-h-screen bg-white text-primary selection:bg-primary selection:text-white">
             {/* Header / Back button */}
             <div className="fixed top-8 left-6 md:left-20 z-50">
                 <Link
                     to="/"
-                    className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-black transition-all duration-500"
+                    className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-primary transition-all duration-500"
                 >
                     <ArrowLeft size={18} className="transition-transform duration-300 group-hover:-translate-x-1" />
                     <span className="text-sm font-bold uppercase tracking-wider">Retour</span>
@@ -23,14 +23,14 @@ const About: React.FC = () => {
             </div>
 
             {/* Hero Section */}
-            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-black">
+            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-primary">
                 <div className="absolute inset-0">
                     <img
                         src={aboutImg}
                         alt="Magenor Industrial"
                         className="w-full h-full object-cover opacity-70 scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/20" />
                 </div>
 
                 <div className="relative z-10 text-center px-6">
@@ -62,12 +62,12 @@ const About: React.FC = () => {
                     transition={{ duration: 0.8 }}
                     className="space-y-12"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-black">
-                        Bâtir l'avenir avec <span className="text-black/30">rigueur et passion.</span>
+                    <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-primary">
+                        Bâtir l'avenir avec <span className="text-primary/30">rigueur et passion.</span>
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <div className="space-y-6 text-lg text-black/70 leading-relaxed font-medium">
+                        <div className="space-y-6 text-lg text-primary/70 leading-relaxed font-medium">
                             <p>
                                 Depuis plus de 15 ans, MAGENOR s'est imposée comme un acteur majeur du secteur des Travaux Publics. Notre entreprise familiale a su évoluer tout en conservant ses valeurs fondamentales : la qualité, la sécurité et le respect des engagements.
                             </p>
@@ -75,7 +75,7 @@ const About: React.FC = () => {
                                 Spécialisés dans la location de matériel, le terrassement et la démolition, nous accompagnons nos clients sur des projets d'envergure, de la phase de conception à la réalisation finale.
                             </p>
                         </div>
-                        <div className="space-y-6 text-lg text-black/70 leading-relaxed font-medium">
+                        <div className="space-y-6 text-lg text-primary/70 leading-relaxed font-medium">
                             <p>
                                 Notre parc machine de pointe et notre expertise technique nous permettent de relever les défis les plus complexes. Nous intervenons sur toute l'Ile-de-France avec une réactivité et un professionnalisme reconnus.
                             </p>
@@ -92,7 +92,7 @@ const About: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
-                    className="mt-32 p-12 md:p-20 rounded-[40px] bg-black text-white relative overflow-hidden"
+                    className="mt-32 p-12 md:p-20 rounded-[40px] bg-primary text-white relative overflow-hidden"
                 >
                     <div className="absolute top-0 right-0 p-12 opacity-5">
                         <Target size={200} />

@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
     }, []);
 
     return (
-        <section id="hero" className="relative h-screen w-full flex items-end justify-start px-6 md:px-20 pb-24 md:pb-32 overflow-hidden bg-black text-left">
+        <section id="hero" className="relative h-screen w-full flex items-end justify-start px-6 md:px-20 pb-24 md:pb-32 overflow-hidden bg-primary text-left">
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -51,9 +51,9 @@ const Hero: React.FC = () => {
                 >
                     <source src={videoIntro} type="video/mp4" />
                 </video>
-                <div ref={overlayRef} className="absolute inset-0 bg-black/30 transition-opacity duration-100" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+                <div ref={overlayRef} className="absolute inset-0 bg-primary/30 transition-opacity duration-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/50 via-transparent to-transparent" />
             </div>
 
             {/* Floating Particles */}
@@ -118,14 +118,14 @@ const Hero: React.FC = () => {
                     className="flex items-center gap-4 flex-wrap"
                 >
                     <button className="group flex items-center gap-5 bg-white rounded-full pl-8 pr-2 py-2 hover:bg-white/95 hover:shadow-2xl hover:shadow-white/10 transition-all duration-500 hover:-translate-y-0.5">
-                        <span className="text-black font-bold text-[13px] tracking-tight uppercase">Découvrir nos expertises</span>
-                        <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
+                        <span className="text-primary font-bold text-[13px] tracking-tight uppercase">Découvrir nos expertises</span>
+                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
                             <ArrowRight size={16} className="text-white" />
                         </div>
                     </button>
 
                     <button className="group flex items-center gap-3 rounded-full px-6 py-3 border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all duration-500">
-                        <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-black text-white transition-all duration-300">
+                        <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-primary text-white transition-all duration-300">
                             <Play size={12} fill="currentColor" />
                         </div>
                         <span className="text-white/80 font-semibold text-[13px] tracking-tight uppercase group-hover:text-white transition-colors duration-300">Voir la vidéo</span>

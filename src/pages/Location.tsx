@@ -52,12 +52,12 @@ const Location: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
+        <div className="min-h-screen bg-white text-primary selection:bg-primary selection:text-white">
             {/* Nav Back */}
             <div className="absolute top-8 left-6 md:left-20 z-50">
                 <Link
                     to="/"
-                    className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-black transition-all duration-500"
+                    className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-primary transition-all duration-500"
                 >
                     <ArrowLeft size={18} className="transition-transform duration-300 group-hover:-translate-x-1" />
                     <span className="text-sm font-bold uppercase tracking-wider">RETOUR</span>
@@ -65,7 +65,7 @@ const Location: React.FC = () => {
             </div>
 
             {/* Hero Section */}
-            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-black">
+            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-primary">
                 <motion.div
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
@@ -77,7 +77,7 @@ const Location: React.FC = () => {
                         alt="Magenor Fleet"
                         className="w-full h-full object-cover opacity-60"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-white" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-transparent to-white" />
                 </motion.div>
 
                 <div className="relative z-10 text-center px-6 max-w-5xl">
@@ -102,7 +102,7 @@ const Location: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="text-black text-xl md:text-2xl font-medium max-w-2xl mx-auto"
+                        className="text-primary text-xl md:text-2xl font-medium max-w-2xl mx-auto"
                     >
                         La puissance logistique pour vos chantiers les plus ambitieux en Île-de-France.
                     </motion.p>
@@ -119,9 +119,9 @@ const Location: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-white p-10 rounded-[40px] shadow-2xl shadow-black/5 border border-black/[0.03] space-y-4 group hover:bg-black hover:text-white transition-all duration-500"
+                            className="bg-white p-10 rounded-[40px] shadow-2xl shadow-primary/5 border border-primary/[0.03] space-y-4 group hover:bg-primary hover:text-white transition-all duration-500"
                         >
-                            <div className="w-12 h-12 rounded-2xl bg-black/5 flex items-center justify-center text-black group-hover:bg-white/10 group-hover:text-white transition-colors">
+                            <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-white/10 group-hover:text-white transition-colors">
                                 {adv.icon}
                             </div>
                             <h3 className="text-xl font-bold font-display">{adv.title}</h3>
@@ -136,9 +136,9 @@ const Location: React.FC = () => {
                 <div className="space-y-6 max-w-3xl">
                     <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1]">
                         Explorez notre <br />
-                        <span className="text-black/20">parc d'exception.</span>
+                        <span className="text-primary/20">parc d'exception.</span>
                     </h2>
-                    <p className="text-lg text-black/50 font-medium">
+                    <p className="text-lg text-primary/50 font-medium">
                         Nous investissons continuellement dans les meilleures technologies pour garantir la réussite de vos projets.
                     </p>
                 </div>
@@ -150,23 +150,23 @@ const Location: React.FC = () => {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className={`p-10 rounded-[48px] bg-gradient-to-br ${cat.color} border border-black/[0.03] flex flex-col justify-between h-full hover:shadow-xl transition-all duration-500`}
+                            className={`p-10 rounded-[48px] bg-gradient-to-br ${cat.color} border border-primary/[0.03] flex flex-col justify-between h-full hover:shadow-xl transition-all duration-500`}
                         >
                             <div className="space-y-8">
-                                <div className="w-14 h-14 rounded-3xl bg-white flex items-center justify-center text-black shadow-sm">
+                                <div className="w-14 h-14 rounded-3xl bg-white flex items-center justify-center text-primary shadow-sm">
                                     {cat.icon}
                                 </div>
                                 <div className="space-y-4">
                                     <h3 className="text-3xl font-bold font-display">{cat.title}</h3>
-                                    <p className="text-black/60 font-medium leading-relaxed">{cat.details}</p>
+                                    <p className="text-primary/60 font-medium leading-relaxed">{cat.details}</p>
                                 </div>
                             </div>
-                            <div className="mt-12 pt-8 border-t border-black/5">
-                                <p className="text-[10px] font-black tracking-widest uppercase text-black/30 mb-4">Capacités & Modèles</p>
+                            <div className="mt-12 pt-8 border-t border-primary/5">
+                                <p className="text-[10px] font-black tracking-widest uppercase text-primary/30 mb-4">Capacités & Modèles</p>
                                 <ul className="space-y-3">
                                     {cat.specs.map((spec, sI) => (
                                         <li key={sI} className="flex items-center gap-3 text-sm font-bold">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-black/20" />
+                                            <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />
                                             {spec}
                                         </li>
                                     ))}
@@ -178,7 +178,7 @@ const Location: React.FC = () => {
             </section>
 
             {/* Truck Section - More Visual */}
-            <section className="bg-black py-32 rounded-[60px] mx-6 md:mx-12 overflow-hidden relative">
+            <section className="bg-primary py-32 rounded-[60px] mx-6 md:mx-12 overflow-hidden relative">
                 <div className="max-w-7xl mx-auto px-6 md:px-20">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         <div className="space-y-12">
@@ -197,8 +197,8 @@ const Location: React.FC = () => {
                                 to="/contact"
                                 className="inline-flex items-center gap-6 bg-white rounded-full pl-10 pr-3 py-3 hover:scale-105 transition-transform duration-500"
                             >
-                                <span className="text-black font-black text-sm tracking-widest uppercase">Demander une cotation</span>
-                                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
+                                <span className="text-primary font-black text-sm tracking-widest uppercase">Demander une cotation</span>
+                                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white">
                                     <ArrowRight size={20} />
                                 </div>
                             </Link>
@@ -224,11 +224,11 @@ const Location: React.FC = () => {
             {/* Final CTA */}
             <section className="py-40 text-center">
                 <div className="max-w-3xl mx-auto space-y-10 px-6">
-                    <h2 className="text-4xl md:text-6xl font-black tracking-tight">Besoin d'un parc mobile <span className="text-black/20">performant ?</span></h2>
-                    <p className="text-xl text-black/50 font-medium">Nos experts vous conseillent sur le choix des machines adaptées à la configuration de votre sol et à vos contraintes de délais.</p>
+                    <h2 className="text-4xl md:text-6xl font-black tracking-tight">Besoin d'un parc mobile <span className="text-primary/20">performant ?</span></h2>
+                    <p className="text-xl text-primary/50 font-medium">Nos experts vous conseillent sur le choix des machines adaptées à la configuration de votre sol et à vos contraintes de délais.</p>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-10">
-                        <Link to="/contact" className="w-full md:w-auto bg-black text-white px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest hover:bg-black/80 transition-all">Nous contacter</Link>
-                        <a href="tel:+2127892137438" className="w-full md:w-auto border border-black/10 px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest hover:bg-black hover:text-white transition-all">+212 789 213 7438</a>
+                        <Link to="/contact" className="w-full md:w-auto bg-primary text-white px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest hover:bg-primary/80 transition-all">Nous contacter</Link>
+                        <a href="tel:+2127892137438" className="w-full md:w-auto border border-primary/10 px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all">+212 789 213 7438</a>
                     </div>
                 </div>
             </section>

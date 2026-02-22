@@ -111,7 +111,7 @@ const Header: React.FC = () => {
                         className="fixed inset-0 z-[100] lg:hidden"
                     >
                         {/* Backdrop */}
-                        <div className="absolute inset-0 bg-black/95 backdrop-blur-2xl" onClick={() => setMobileOpen(false)} />
+                        <div className="absolute inset-0 bg-primary/95 backdrop-blur-2xl" onClick={() => setMobileOpen(false)} />
 
                         {/* Menu Content */}
                         <motion.div
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
                             animate={{ x: 0 }}
                             exit={{ x: '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="absolute top-0 right-0 w-full max-w-sm h-full bg-black border-l border-white/5 p-12 flex flex-col justify-between"
+                            className="absolute top-0 right-0 w-full max-w-sm h-full bg-primary border-l border-white/5 p-12 flex flex-col justify-between"
                         >
                             <div className="space-y-16">
                                 <div className="flex items-center justify-between">

@@ -21,7 +21,7 @@ const services = [
     },
     {
         title: 'Terrassement',
-        subtitle: 'Spécialisé dans le domaine du terrassement depuis plusieurs années. Nos équipes expérimentées réalisent tous vos chantiers de terrassement V.R.D (Voiries et Réseaux Divers).',
+        subtitle: 'Spécialisé dans le domaine du terrassement depuis plusieurs années. Nos équipes expérimentées réalisent tous vos chantiers de terrassement V.R.D.',
         image: serviceEarthwork,
         icon: <Shovel strokeWidth={1.5} />,
         tag: 'Expertise 02',
@@ -38,8 +38,9 @@ const services = [
 const Services: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const imagesRef = useRef<HTMLDivElement[]>([]);
-    const contentsRef = useRef<HTMLDivElement[]>([]);
+    const contentWrappersRef = useRef<HTMLDivElement[]>([]);
     const [activeIndex, setActiveIndex] = useState(0);
+    const tlRef = useRef<gsap.core.Timeline | null>(null);
 
     useEffect(() => {
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -49,12 +50,12 @@ const Services: React.FC = () => {
             const container = containerRef.current;
             const sections = services.length;
 
-            const tl = gsap.timeline({
+            tlRef.current = gsap.timeline({
                 scrollTrigger: {
                     trigger: container,
                     start: 'top top',
                     end: `+=${sections * 100}%`,
-                    scrub: 1,
+                    scrub: 1.5, // Added slight scrub smoothing specifically for this complex animation
                     pin: true,
                     pinSpacing: true,
                     onUpdate: (self) => {
@@ -62,16 +63,29 @@ const Services: React.FC = () => {
                             Math.floor(self.progress * sections),
                             sections - 1
                         );
-                        setActiveIndex(index);
+                        if (index !== activeIndex) {
+                            setActiveIndex(index);
+                        }
                     },
                 },
             });
 
-            // Initial setup for contents
+            // Initial setup for arrays
             services.forEach((_, i) => {
                 if (i !== 0) {
-                    gsap.set(contentsRef.current[i], { opacity: 0, y: 50, visibility: 'hidden' });
-                    gsap.set(imagesRef.current[i], { clipPath: 'inset(100% 0% 0% 0%)', scale: 1.1 });
+                    // Hide content logic
+                    gsap.set(contentWrappersRef.current[i], { autoAlpha: 0, y: 60 });
+                    const elements = contentWrappersRef.current[i].querySelectorAll('.stagger-elem');
+                    gsap.set(elements, { autoAlpha: 0, y: 30 });
+
+                    // Hide images logic with scale for parallax effect
+                    gsap.set(imagesRef.current[i], { autoAlpha: 0 });
+                    gsap.set(imagesRef.current[i].querySelector('img'), { scale: 1.2 });
+                } else {
+                    // Make sure the first one's elements are visible
+                    const elements = contentWrappersRef.current[0].querySelectorAll('.stagger-elem');
+                    gsap.set(elements, { autoAlpha: 1, y: 0 });
+                    gsap.set(imagesRef.current[0].querySelector('img'), { scale: 1 });
                 }
             });
 
@@ -79,37 +93,90 @@ const Services: React.FC = () => {
             services.forEach((_, i) => {
                 if (i === 0) return;
 
-                // Sync image and content reveal
-                tl.to(imagesRef.current[i], {
-                    clipPath: 'inset(0% 0% 0% 0%)',
-                    scale: 1,
-                    duration: 1,
-                    ease: 'none'
-                }, i - 0.5)
-                    .to(contentsRef.current[i], {
-                        opacity: 1,
-                        y: 0,
-                        visibility: 'visible',
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    }, i - 0.3)
-                    .to(contentsRef.current[i - 1], {
-                        opacity: 0,
-                        y: -50,
-                        visibility: 'hidden',
-                        duration: 0.5,
+                const currentImgContainer = imagesRef.current[i];
+                const currentImg = currentImgContainer.querySelector('img');
+                const previousImgContainer = imagesRef.current[i - 1];
+
+                const currentContent = contentWrappersRef.current[i];
+                const currentElements = currentContent.querySelectorAll('.stagger-elem');
+
+                const previousContent = contentWrappersRef.current[i - 1];
+                const previousElements = previousContent.querySelectorAll('.stagger-elem');
+
+                // Animate Out Previous
+                tlRef.current!
+                    .to(previousElements, {
+                        y: -30,
+                        autoAlpha: 0,
+                        duration: 0.4,
+                        stagger: 0.05,
                         ease: 'power2.in'
-                    }, i - 0.7);
+                    }, i - 0.5)
+                    .to(previousContent, {
+                        autoAlpha: 0,
+                        duration: 0.4
+                    }, i - 0.3)
+                    .to(previousImgContainer, {
+                        autoAlpha: 0,
+                        duration: 1,
+                        ease: 'none'
+                    }, i - 0.5)
+
+                // Animate In Current Sequence
+                tlRef.current!
+                    .to(currentImgContainer, {
+                        autoAlpha: 1,
+                        duration: 1,
+                        ease: 'none'
+                    }, i - 0.5)
+                    .to(currentImg, {
+                        scale: 1,
+                        duration: 1.5,
+                        ease: 'power1.out'
+                    }, i - 0.5)
+                    // Bring in content container
+                    .to(currentContent, {
+                        y: 0,
+                        autoAlpha: 1,
+                        duration: 0.6,
+                        ease: 'power3.out'
+                    }, i - 0.2)
+                    // Stagger the text items inside
+                    .to(currentElements, {
+                        y: 0,
+                        autoAlpha: 1,
+                        duration: 0.6,
+                        stagger: 0.1,
+                        ease: 'back.out(1.2)'
+                    }, i - 0.1);
             });
         }, containerRef);
 
         return () => ctx.revert();
-    }, []);
+    }, [activeIndex]);
+
+    const scrollToSection = (index: number) => {
+        if (!tlRef.current) return;
+
+        // Calculate raw progress required to reach the start of that panel
+        const totalSections = services.length;
+        // Adding a slight offset (0.05) helps Ensure it lands inside the active window.
+        const targetProgress = (index / totalSections) + 0.05;
+
+        gsap.to(window, {
+            scrollTo: {
+                y: tlRef.current.scrollTrigger!.start + (tlRef.current.scrollTrigger!.end - tlRef.current.scrollTrigger!.start) * targetProgress,
+                autoKill: false
+            },
+            duration: 1.5,
+            ease: "power3.inOut"
+        });
+    };
 
     return (
         <section
             ref={containerRef}
-            className="relative h-screen bg-black overflow-hidden"
+            className="relative h-screen bg-primary overflow-hidden"
         >
             {/* Background Images Layer */}
             <div className="absolute inset-0">
@@ -123,95 +190,102 @@ const Services: React.FC = () => {
                         <img
                             src={service.image}
                             alt={service.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover origin-center transform-gpu"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
                     </div>
                 ))}
             </div>
 
             {/* Content Layer */}
-            <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-20 py-32 flex flex-col justify-center">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-                    <div className="relative h-[500px]">
+            <div className="relative z-10 h-full max-w-[1440px] mx-auto px-6 md:px-20 flex flex-col justify-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+
+                    {/* Glassmorphic Text Cards */}
+                    <div className="relative h-[600px] lg:col-span-7 flex flex-col justify-center">
                         {services.map((service, i) => (
                             <div
                                 key={i}
-                                ref={(el) => { if (el) contentsRef.current[i] = el; }}
-                                className="absolute inset-0 flex flex-col justify-center space-y-8"
+                                ref={(el) => { if (el) contentWrappersRef.current[i] = el; }}
+                                className="absolute left-0 w-full"
                             >
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-[1px] bg-white/20" />
-                                    <span className="text-[11px] font-bold tracking-[0.3em] text-white/40 uppercase">
-                                        {service.tag}
-                                    </span>
-                                </div>
+                                <div className="bg-white/5 backdrop-blur-[32px] border border-white/10 rounded-[32px] md:rounded-[48px] p-10 md:p-16 shadow-2xl flex flex-col space-y-10 w-full transform-gpu">
+                                    <div className="stagger-elem flex items-center gap-4">
+                                        <div className="w-12 h-[1px] bg-white/20" />
+                                        <span className="text-[11px] font-bold tracking-[0.3em] text-white/50 uppercase">
+                                            {service.tag}
+                                        </span>
+                                    </div>
 
-                                <div className="space-y-6">
-                                    <div className="flex items-center gap-6">
-                                        <div className="w-16 h-16 rounded-[24px] bg-white/10 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white">
-                                            {service.icon}
+                                    <div className="space-y-6">
+                                        <div className="stagger-elem flex items-center gap-6">
+                                            <div className="w-16 h-16 rounded-[24px] bg-white/10 border border-white/10 flex items-center justify-center text-white shadow-inner shadow-white/5">
+                                                {service.icon}
+                                            </div>
+                                            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter font-display leading-[1.1]">
+                                                {service.title}
+                                            </h2>
                                         </div>
-                                        <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-[-0.03em] font-display">
-                                            {service.title}
-                                        </h2>
+                                        <p className="stagger-elem text-lg md:text-xl text-white/70 leading-relaxed font-medium max-w-xl text-balance">
+                                            {service.subtitle}
+                                        </p>
                                     </div>
-                                    <p className="text-xl md:text-2xl text-white/50 leading-relaxed font-medium max-w-xl">
-                                        {service.subtitle}
-                                    </p>
-                                </div>
 
-                                <Link
-                                    to={i === 0 ? "/location" : i === 1 ? "/travaux" : "/travaux"}
-                                    className="group flex items-center gap-5 bg-white rounded-full pl-8 pr-2 py-2 w-max transition-all duration-300"
-                                >
-                                    <span className="text-black font-bold text-[13px] tracking-tight uppercase px-2">
-                                        Voir les détails
-                                    </span>
-                                    <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1">
-                                        <ArrowRight size={16} />
+                                    <div className="stagger-elem pt-4">
+                                        <Link
+                                            to={i === 0 ? "/location" : i === 1 ? "/travaux" : "/travaux"}
+                                            className="group inline-flex items-center gap-5 bg-white rounded-full pl-8 pr-2 py-2 w-max hover:bg-white/90 transition-all duration-300 shadow-xl shadow-black/10"
+                                        >
+                                            <span className="text-primary font-black text-[12px] tracking-widest uppercase px-2">
+                                                Voir les détails
+                                            </span>
+                                            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-105">
+                                                <ArrowRight size={16} />
+                                            </div>
+                                        </Link>
                                     </div>
-                                </Link>
+                                </div>
                             </div>
                         ))}
                     </div>
 
-                    {/* Progress Indicators */}
-                    <div className="hidden lg:flex flex-col justify-center items-end gap-10">
+                    {/* Interactive Progress Indicators */}
+                    <div className="hidden lg:flex flex-col justify-center items-end lg:col-span-4 lg:col-start-9 gap-12">
                         {services.map((_, i) => (
-                            <div
+                            <button
                                 key={i}
-                                className="flex items-center gap-8 group cursor-pointer"
+                                onClick={() => scrollToSection(i)}
+                                className="flex items-center justify-end gap-6 group cursor-pointer w-full text-right outline-none"
                             >
                                 <span
-                                    className={`text-[11px] font-bold tracking-widest uppercase transition-all duration-500 ${i === activeIndex ? 'text-white' : 'text-white/20'
+                                    className={`text-[11px] font-black tracking-[0.3em] uppercase transition-colors duration-500 ${i === activeIndex ? 'text-white' : 'text-white/30 group-hover:text-white/60'
                                         }`}
                                 >
                                     0{i + 1}
                                 </span>
-                                <div className="relative w-12 h-[1px] bg-white/10 overflow-hidden">
+                                <div className="relative w-16 h-[2px] bg-white/10 overflow-hidden rounded-full transition-all duration-300 group-hover:bg-white/20">
                                     <motion.div
-                                        className="absolute inset-0 bg-white origin-left"
+                                        className="absolute inset-0 bg-white origin-left rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"
                                         initial={false}
                                         animate={{
                                             scaleX: i === activeIndex ? 1 : 0
                                         }}
-                                        transition={{ duration: 0.5 }}
+                                        transition={{ duration: 0.6, ease: "circOut" }}
                                     />
                                 </div>
-                            </div>
+                            </button>
                         ))}
                     </div>
                 </div>
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-20">
-                <span className="text-[10px] font-bold tracking-[0.4em] text-white/20 uppercase whitespace-nowrap">DÉCOUVRIR</span>
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-20 pointer-events-none">
+                <span className="text-[10px] font-black tracking-[0.4em] text-white/30 uppercase whitespace-nowrap">DÉCOUVRIR</span>
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-[1px] h-12 bg-gradient-to-b from-white/40 to-transparent mx-auto mt-4"
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent mx-auto mt-4"
                 />
             </div>
         </section>

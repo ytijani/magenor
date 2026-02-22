@@ -31,12 +31,12 @@ const Travaux: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
+        <div className="min-h-screen bg-white text-primary selection:bg-primary selection:text-white">
             {/* Nav Back */}
             <div className="absolute top-8 left-6 md:left-20 z-50">
                 <Link
                     to="/"
-                    className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-black transition-all duration-500"
+                    className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-primary transition-all duration-500"
                 >
                     <ArrowLeft size={18} className="transition-transform duration-300 group-hover:-translate-x-1" />
                     <span className="text-sm font-bold uppercase tracking-wider">RETOUR</span>
@@ -44,7 +44,7 @@ const Travaux: React.FC = () => {
             </div>
 
             {/* Hero Section */}
-            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-black">
+            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-primary">
                 <motion.div
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
@@ -56,7 +56,7 @@ const Travaux: React.FC = () => {
                         alt="Magenor Travaux"
                         className="w-full h-full object-cover opacity-60"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/40" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-primary/40" />
                 </motion.div>
 
                 <div className="relative z-10 text-center px-6 max-w-5xl">
@@ -106,35 +106,35 @@ const Travaux: React.FC = () => {
                     <div className="space-y-10">
                         <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-[1.05]">
                             Transformer le sol, <br />
-                            <span className="text-black/20 italic">bâtir le futur.</span>
+                            <span className="text-primary/20 italic">bâtir le futur.</span>
                         </h2>
-                        <p className="text-xl text-black/50 leading-relaxed font-medium">
+                        <p className="text-xl text-primary/50 leading-relaxed font-medium">
                             MAGENOR Travaux Publics intervient sur les projets d'infrastructure les plus complexes d'Île-de-France, en combinant puissance mécanique et expertise humaine.
                         </p>
-                        <div className="grid grid-cols-2 gap-8 pt-8 border-t border-black/5">
+                        <div className="grid grid-cols-2 gap-8 pt-8 border-t border-primary/5">
                             <div className="space-y-2">
                                 <p className="text-4xl font-black">15+</p>
-                                <p className="text-xs font-bold uppercase tracking-widest text-black/40">Années d'Expérience</p>
+                                <p className="text-xs font-bold uppercase tracking-widest text-primary/40">Années d'Expérience</p>
                             </div>
                             <div className="space-y-2">
                                 <p className="text-4xl font-black">160</p>
-                                <p className="text-xs font-bold uppercase tracking-widest text-black/40">Collaborateurs Experts</p>
+                                <p className="text-xs font-bold uppercase tracking-widest text-primary/40">Collaborateurs Experts</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="space-y-12 bg-black/5 p-12 rounded-[50px] border border-black/[0.03]">
+                    <div className="space-y-12 bg-primary/5 p-12 rounded-[50px] border border-primary/[0.03]">
                         <div className="space-y-4">
-                            <div className="w-12 h-12 rounded-2xl bg-black flex items-center justify-center text-white">
+                            <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white">
                                 <HardHat />
                             </div>
                             <h3 className="text-2xl font-black tracking-tight uppercase">Notre Engagement RSE</h3>
-                            <p className="text-black/60 leading-relaxed font-medium">
+                            <p className="text-primary/60 leading-relaxed font-medium">
                                 Nous appliquons une politique stricte de tri à la source et de re-valorisation des matériaux. Notre objectif est de réduire l'impact environnemental de chaque chantier via des circuits courts de recyclage.
                             </p>
                         </div>
                         <div className="grid grid-cols-1 gap-4">
-                            <div className="flex items-center gap-4 p-6 bg-white rounded-3xl shadow-sm border border-black/5">
+                            <div className="flex items-center gap-4 p-6 bg-white rounded-3xl shadow-sm border border-primary/5">
                                 <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
                                     <Recycle size={20} />
                                 </div>
@@ -146,7 +146,7 @@ const Travaux: React.FC = () => {
             </section>
 
             {/* Expertise Cards */}
-            <section className="bg-black py-40 rounded-[60px] mx-6 md:mx-12 overflow-hidden relative">
+            <section className="bg-primary py-40 rounded-[60px] mx-6 md:mx-12 overflow-hidden relative">
                 <div className="max-w-7xl mx-auto px-6 md:px-20 text-center mb-24">
                     <span className="text-white/40 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Catalogue de services</span>
                     <h2 className="text-4xl md:text-6xl font-black text-white">Nos Domaines d'Intervention</h2>
@@ -163,22 +163,22 @@ const Travaux: React.FC = () => {
                             className="bg-white/5 border border-white/10 p-12 rounded-[48px] flex flex-col justify-between h-full group hover:bg-white transition-all duration-700"
                         >
                             <div className="space-y-10">
-                                <div className="w-16 h-16 rounded-[24px] bg-white/10 flex items-center justify-center text-white group-hover:bg-black group-hover:text-white transition-all duration-500">
+                                <div className="w-16 h-16 rounded-[24px] bg-white/10 flex items-center justify-center text-white group-hover:bg-primary group-hover:text-white transition-all duration-500">
                                     {exp.icon}
                                 </div>
                                 <div className="space-y-4">
-                                    <h3 className="text-2xl font-black text-white group-hover:text-black leading-tight tracking-tight uppercase transition-colors">{exp.title}</h3>
-                                    <p className="text-white/40 group-hover:text-black/60 font-medium transition-colors leading-relaxed">
+                                    <h3 className="text-2xl font-black text-white group-hover:text-primary leading-tight tracking-tight uppercase transition-colors">{exp.title}</h3>
+                                    <p className="text-white/40 group-hover:text-primary/60 font-medium transition-colors leading-relaxed">
                                         {exp.desc}
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="mt-12 pt-10 border-t border-white/5 group-hover:border-black/5">
+                            <div className="mt-12 pt-10 border-t border-white/5 group-hover:border-primary/5">
                                 <ul className="space-y-4">
                                     {exp.points.map((p, pi) => (
-                                        <li key={pi} className="flex items-center gap-3 text-[13px] font-bold text-white/60 group-hover:text-black transition-colors">
-                                            <div className="w-1 h-1 rounded-full bg-white/20 group-hover:bg-black/20" />
+                                        <li key={pi} className="flex items-center gap-3 text-[13px] font-bold text-white/60 group-hover:text-primary transition-colors">
+                                            <div className="w-1 h-1 rounded-full bg-white/20 group-hover:bg-primary/20" />
                                             {p}
                                         </li>
                                     ))}
@@ -191,21 +191,21 @@ const Travaux: React.FC = () => {
 
             {/* Closing Process CTA */}
             <section className="max-w-7xl mx-auto px-6 md:px-20 py-40">
-                <div className="bg-black/5 rounded-[60px] p-12 md:p-24 flex flex-col lg:flex-row items-center justify-between gap-16 border border-black/[0.03]">
+                <div className="bg-primary/5 rounded-[60px] p-12 md:p-24 flex flex-col lg:flex-row items-center justify-between gap-16 border border-primary/[0.03]">
                     <div className="max-w-xl space-y-6">
-                        <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Votre projet, <br /> notre <span className="text-black/20">priorité.</span></h2>
-                        <p className="text-lg text-black/50 font-medium">De la phase d'étude à la livraison finale, nos chefs de chantier assurent un suivi rigoureux pour garantir vos délais.</p>
+                        <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Votre projet, <br /> notre <span className="text-primary/20">priorité.</span></h2>
+                        <p className="text-lg text-primary/50 font-medium">De la phase d'étude à la livraison finale, nos chefs de chantier assurent un suivi rigoureux pour garantir vos délais.</p>
                     </div>
                     <div className="flex flex-col gap-4 w-full lg:w-auto">
                         <Link
                             to="/contact"
-                            className="bg-black text-white px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest text-center hover:scale-105 transition-all shadow-xl shadow-black/10"
+                            className="bg-primary text-white px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest text-center hover:scale-105 transition-all shadow-xl shadow-primary/10"
                         >
                             Lancer une étude
                         </Link>
                         <a
                             href="tel:+2127892137438"
-                            className="bg-white border border-black/10 text-black px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest text-center hover:bg-black hover:text-white transition-all"
+                            className="bg-white border border-primary/10 text-primary px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest text-center hover:bg-primary hover:text-white transition-all"
                         >
                             Parler à un expert
                         </a>

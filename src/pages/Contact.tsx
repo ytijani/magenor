@@ -10,12 +10,12 @@ const Contact: React.FC = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
+        <div className="min-h-screen bg-white text-primary selection:bg-primary selection:text-white">
             {/* Header / Back button */}
             <div className="fixed top-8 left-6 md:left-20 z-50">
                 <Link
                     to="/"
-                    className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-black transition-all duration-500"
+                    className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-primary transition-all duration-500"
                 >
                     <ArrowLeft size={18} className="transition-transform duration-300 group-hover:-translate-x-1" />
                     <span className="text-sm font-bold uppercase tracking-wider">Retour</span>
@@ -23,14 +23,14 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Hero Section */}
-            <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-black">
+            <section className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-primary">
                 <div className="absolute inset-0">
                     <img
                         src={contactImg}
                         alt="Magenor Headquarters"
                         className="w-full h-full object-cover opacity-60 scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/20" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-primary/20" />
                 </div>
 
                 <div className="relative z-10 text-center px-6">
@@ -59,81 +59,81 @@ const Contact: React.FC = () => {
                     {/* Contact Info */}
                     <div className="lg:col-span-5 space-y-12">
                         <div className="space-y-6">
-                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-display text-black">
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-display text-primary">
                                 Toujours à votre <br />
-                                <span className="text-black/30">disposition.</span>
+                                <span className="text-primary/30">disposition.</span>
                             </h2>
-                            <p className="text-lg text-black/60 leading-relaxed font-medium">
+                            <p className="text-lg text-primary/60 leading-relaxed font-medium">
                                 Que vous soyez un client fidèle ou un futur partenaire, nos équipes sont prêtes à répondre à vos besoins techniques.
                             </p>
                         </div>
 
                         <div className="space-y-8">
                             <div className="flex gap-6 items-start group">
-                                <div className="w-12 h-12 rounded-2xl bg-black flex items-center justify-center text-white group-hover:bg-black/80 transition-colors">
+                                <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white group-hover:bg-primary/80 transition-colors">
                                     <Phone size={20} strokeWidth={1.5} />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-xs font-bold uppercase tracking-widest text-black/30">Téléphone</p>
+                                    <p className="text-xs font-bold uppercase tracking-widest text-primary/30">Téléphone</p>
                                     <p className="text-xl font-bold">01 45 67 89 10</p>
                                 </div>
                             </div>
 
                             <div className="flex gap-6 items-start group">
-                                <div className="w-12 h-12 rounded-2xl bg-black flex items-center justify-center text-white group-hover:bg-black/80 transition-colors">
+                                <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white group-hover:bg-primary/80 transition-colors">
                                     <Mail size={20} strokeWidth={1.5} />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-xs font-bold uppercase tracking-widest text-black/30">Email</p>
+                                    <p className="text-xs font-bold uppercase tracking-widest text-primary/30">Email</p>
                                     <p className="text-xl font-bold">contact@magenor.fr</p>
                                 </div>
                             </div>
 
                             <div className="flex gap-6 items-start group">
-                                <div className="w-12 h-12 rounded-2xl bg-black flex items-center justify-center text-white group-hover:bg-black/80 transition-colors">
+                                <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white group-hover:bg-primary/80 transition-colors">
                                     <MapPin size={20} strokeWidth={1.5} />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-xs font-bold uppercase tracking-widest text-black/30">Siège Social</p>
+                                    <p className="text-xs font-bold uppercase tracking-widest text-primary/30">Siège Social</p>
                                     <p className="text-xl font-bold leading-tight">123 Rue de l'Industrie <br /> 75000 Paris, France</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="pt-8 flex gap-4">
-                            <a href="#" className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-black/40 hover:bg-black hover:text-white hover:border-black transition-all duration-500">
+                            <a href="#" className="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center text-primary/40 hover:bg-primary hover:text-white hover:border-primary transition-all duration-500">
                                 <Linkedin size={18} />
                             </a>
-                            <a href="#" className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-black/40 hover:bg-black hover:text-white hover:border-black transition-all duration-500">
+                            <a href="#" className="w-12 h-12 rounded-full border border-primary/10 flex items-center justify-center text-primary/40 hover:bg-primary hover:text-white hover:border-primary transition-all duration-500">
                                 <Instagram size={18} />
                             </a>
                         </div>
                     </div>
 
                     {/* Contact Form */}
-                    <div className="lg:col-span-7 bg-black/5 rounded-[48px] p-8 md:p-12">
+                    <div className="lg:col-span-7 bg-primary/5 rounded-[48px] p-8 md:p-12">
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-black/40 ml-4">Nom</label>
+                                    <label className="text-xs font-bold uppercase tracking-widest text-primary/40 ml-4">Nom</label>
                                     <input
                                         type="text"
                                         placeholder="Votre nom"
-                                        className="w-full bg-white border border-black/5 rounded-2xl px-6 py-4 outline-none focus:border-black/20 transition-all font-medium"
+                                        className="w-full bg-white border border-primary/5 rounded-2xl px-6 py-4 outline-none focus:border-primary/20 transition-all font-medium"
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-black/40 ml-4">Email</label>
+                                    <label className="text-xs font-bold uppercase tracking-widest text-primary/40 ml-4">Email</label>
                                     <input
                                         type="email"
                                         placeholder="votre@email.com"
-                                        className="w-full bg-white border border-black/5 rounded-2xl px-6 py-4 outline-none focus:border-black/20 transition-all font-medium"
+                                        className="w-full bg-white border border-primary/5 rounded-2xl px-6 py-4 outline-none focus:border-primary/20 transition-all font-medium"
                                     />
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-widest text-black/40 ml-4">Sujet</label>
-                                <select className="w-full bg-white border border-black/5 rounded-2xl px-6 py-4 outline-none focus:border-black/20 transition-all font-medium appearance-none">
+                                <label className="text-xs font-bold uppercase tracking-widest text-primary/40 ml-4">Sujet</label>
+                                <select className="w-full bg-white border border-primary/5 rounded-2xl px-6 py-4 outline-none focus:border-primary/20 transition-all font-medium appearance-none">
                                     <option>Location de matériel</option>
                                     <option>Terrassement / Travaux</option>
                                     <option>Démolition</option>
@@ -141,14 +141,14 @@ const Contact: React.FC = () => {
                                 </select>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-widest text-black/40 ml-4">Message</label>
+                                <label className="text-xs font-bold uppercase tracking-widest text-primary/40 ml-4">Message</label>
                                 <textarea
                                     rows={5}
                                     placeholder="Comment pouvons-nous vous aider ?"
-                                    className="w-full bg-white border border-black/5 rounded-2xl px-6 py-4 outline-none focus:border-black/20 transition-all font-medium resize-none"
+                                    className="w-full bg-white border border-primary/5 rounded-2xl px-6 py-4 outline-none focus:border-primary/20 transition-all font-medium resize-none"
                                 ></textarea>
                             </div>
-                            <button className="w-full bg-black text-white rounded-2xl py-5 font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-black/90 transition-all duration-500 group shadow-lg shadow-black/10">
+                            <button className="w-full bg-primary text-white rounded-2xl py-5 font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-primary/90 transition-all duration-500 group shadow-lg shadow-primary/10">
                                 <span>Envoyer</span>
                                 <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                             </button>
@@ -159,9 +159,9 @@ const Contact: React.FC = () => {
 
             {/* Map Placeholder / Info */}
             <section className="px-6 md:px-20 pb-24">
-                <div className="max-w-7xl mx-auto rounded-[48px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 h-[400px] relative bg-black/5 border border-black/5">
+                <div className="max-w-7xl mx-auto rounded-[48px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 h-[400px] relative bg-primary/5 border border-primary/5">
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <p className="text-black/20 font-display text-4xl font-bold opacity-30 select-none">CARTE INTERACTIVE</p>
+                        <p className="text-primary/20 font-display text-4xl font-bold opacity-30 select-none">CARTE INTERACTIVE</p>
                     </div>
                 </div>
             </section>
