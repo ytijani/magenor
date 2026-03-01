@@ -1,43 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Linkedin, Instagram, Youtube, ArrowRight, MapPin, Mail, Phone } from 'lucide-react';
+import { ArrowRight, MapPin, Mail, Phone } from 'lucide-react';
 import logo from '../assets/logo.svg';
 
-const footerLinks = {
-    navigation: [
-        { name: 'Le Groupe', href: '/qui-sommes-nous', isExternal: false },
-        { name: 'Location', href: '/location', isExternal: false },
-        { name: 'Travaux', href: '/travaux', isExternal: false },
-        { name: 'Contact', href: '/contact', isExternal: false },
-    ],
-    info: [
-        { name: 'Nous rejoindre', href: '#' },
-        { name: 'Actualités', href: '#' },
-        { name: 'Historique', href: '#' },
-        { name: 'La gouvernance', href: '#' },
-    ],
-};
-
-const socialLinks = [
-    { icon: <Linkedin size={16} />, href: '#', name: 'LinkedIn' },
-    { icon: <Instagram size={16} />, href: '#', name: 'Instagram' },
-    { icon: <Youtube size={16} />, href: '#', name: 'YouTube' },
+const footerLinks = [
+    { name: 'Le Groupe', href: '/qui-sommes-nous' },
+    { name: 'Location', href: '/location' },
+    { name: 'Travaux', href: '/travaux' },
+    { name: 'Contact', href: '/contact' },
 ];
 
 const Footer: React.FC = () => {
-    const [email, setEmail] = useState('');
-    const [isSubscribed, setIsSubscribed] = useState(false);
-
-    const handleSubscribe = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (email) {
-            setIsSubscribed(true);
-            setEmail('');
-            setTimeout(() => setIsSubscribed(false), 3000);
-        }
-    };
-
     return (
         <footer className="bg-white text-primary relative border-t border-primary/5">
             <div className="px-6 md:px-20 pt-28 md:pt-36 pb-16 relative z-10">
@@ -52,10 +26,10 @@ const Footer: React.FC = () => {
                     >
                         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 pb-16 md:pb-20 border-b border-primary/[0.06]">
                             <div>
-                                <span className="text-[11px] font-bold tracking-[0.3em] text-primary/25 uppercase block mb-6">
+                                <span className="text-[11px] font-bold tracking-[0.3em] text-primary/40 uppercase block mb-6">
                                     Contactez-nous
                                 </span>
-                                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-primary font-display">
+                                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-[1.05] text-primary font-display">
                                     Mener à bien <br />
                                     <span className="text-primary/20">vos projets ensemble.</span>
                                 </h2>
@@ -73,17 +47,17 @@ const Footer: React.FC = () => {
                     </motion.div>
 
                     {/* Footer Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 mb-20">
                         {/* Brand & Address */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="space-y-8 lg:col-span-1"
+                            className="space-y-8"
                         >
                             <div className="flex items-center">
-                                <div className="h-8 md:h-10 w-[180px] md:w-[220px] overflow-hidden flex items-center justify-start">
+                                <div className="h-20 md:h-24 w-[120px] md:w-[150px] overflow-hidden flex items-center justify-start">
                                     <img src={logo} alt="MAGENOR" className="w-full h-full object-contain" />
                                 </div>
                             </div>
@@ -97,11 +71,11 @@ const Footer: React.FC = () => {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Phone size={18} className="text-primary/30 shrink-0" />
-                                    <p className="text-primary/45 text-[14px] font-medium">+212 789 213 7438</p>
+                                    <a href="tel:+33189471234" className="text-primary/45 text-[14px] font-medium hover:text-primary transition-colors">+33 1 89 47 12 34</a>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Mail size={18} className="text-primary/30 shrink-0" />
-                                    <p className="text-primary/45 text-[14px] font-medium">contact@magenor.com</p>
+                                    <a href="mailto:contact@magenor.fr" className="text-primary/45 text-[14px] font-medium hover:text-primary transition-colors">contact@magenor.fr</a>
                                 </div>
                             </div>
                         </motion.div>
@@ -116,7 +90,7 @@ const Footer: React.FC = () => {
                         >
                             <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-primary/30">Navigation</h4>
                             <ul className="space-y-4">
-                                {footerLinks.navigation.map((link) => (
+                                {footerLinks.map((link) => (
                                     <li key={link.name}>
                                         <Link
                                             to={link.href}
@@ -129,7 +103,7 @@ const Footer: React.FC = () => {
                             </ul>
                         </motion.div>
 
-                        {/* Information */}
+                        {/* Hours */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -137,88 +111,32 @@ const Footer: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="space-y-8"
                         >
-                            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-primary/30">Informations</h4>
-                            <ul className="space-y-4">
-                                {footerLinks.info.map((link) => (
-                                    <li key={link.name}>
-                                        <a
-                                            href={link.href}
-                                            className="text-[15px] font-bold text-primary/60 hover:text-primary transition-colors duration-300"
-                                        >
-                                            {link.name}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
-
-                        {/* Newsletter */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="space-y-8"
-                        >
-                            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-primary/30">Newsletter</h4>
-                            <div className="space-y-6">
-                                <p className="text-primary/45 text-[14px] leading-relaxed font-medium">
-                                    Recevez nos dernières actualités et nos nouveaux arrivages machines.
-                                </p>
-                                <form onSubmit={handleSubscribe} className="relative group">
-                                    <input
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="Votre email"
-                                        className="w-full bg-primary/[0.03] border border-primary/[0.06] rounded-2xl px-6 py-4 text-[14px] font-medium outline-none focus:border-primary/20 focus:bg-white transition-all duration-300"
-                                        required
-                                    />
-                                    <button
-                                        type="submit"
-                                        className="absolute right-2 top-2 bottom-2 aspect-square bg-primary rounded-xl flex items-center justify-center text-white hover:scale-105 transition-transform duration-300"
-                                    >
-                                        <ArrowRight size={18} />
-                                    </button>
-                                    {isSubscribed && (
-                                        <motion.p
-                                            initial={{ opacity: 0, y: 5 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="absolute -bottom-6 left-0 text-[10px] font-bold text-emerald-600 uppercase tracking-widest"
-                                        >
-                                            Merci pour votre inscription !
-                                        </motion.p>
-                                    )}
-                                </form>
+                            <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-primary/30">Horaires</h4>
+                            <div className="space-y-4">
+                                <div className="flex justify-between items-center border-b border-primary/[0.05] pb-3">
+                                    <span className="text-[14px] font-bold text-primary/60">Lun – Ven</span>
+                                    <span className="text-[14px] font-semibold text-primary/40">07h00 – 18h00</span>
+                                </div>
+                                <div className="flex justify-between items-center border-b border-primary/[0.05] pb-3">
+                                    <span className="text-[14px] font-bold text-primary/60">Samedi</span>
+                                    <span className="text-[14px] font-semibold text-primary/40">08h00 – 13h00</span>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-[14px] font-bold text-primary/60">Dimanche</span>
+                                    <span className="text-[14px] font-semibold text-primary/40">Fermé</span>
+                                </div>
                             </div>
                         </motion.div>
                     </div>
 
                     {/* Bottom Bar */}
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 pt-10 border-t border-primary/[0.06]">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-10 border-t border-primary/[0.06]">
                         <p className="text-[11px] font-bold text-primary/20 uppercase tracking-[0.1em]">
                             © {new Date().getFullYear()} MAGENOR TP & PL. Tous droits réservés.
                         </p>
-
-                        <div className="flex items-center gap-8">
-                            <div className="flex items-center gap-6">
-                                {socialLinks.map((social) => (
-                                    <motion.a
-                                        key={social.name}
-                                        whileHover={{ y: -2 }}
-                                        href={social.href}
-                                        className="w-9 h-9 rounded-full bg-primary/[0.03] flex items-center justify-center text-primary/30 hover:bg-primary hover:text-white transition-all duration-300"
-                                        aria-label={social.name}
-                                    >
-                                        {social.icon}
-                                    </motion.a>
-                                ))}
-                            </div>
-                            <div className="flex items-center gap-6 text-[10px] font-bold text-primary/20 uppercase tracking-widest">
-                                <a href="#" className="hover:text-primary transition-colors">Mentions Légales</a>
-                                <a href="#" className="hover:text-primary transition-colors">Politique Cookies</a>
-                            </div>
-                        </div>
+                        <p className="text-[11px] font-medium text-primary/20">
+                            Entreprise de Travaux Publics — Île-de-France
+                        </p>
                     </div>
                 </div>
             </div>

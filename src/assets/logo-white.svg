@@ -1,27 +1,27 @@
-<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="280" height="160" viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- ══ M MARK (white) from User SVG ══ -->
-  <g transform="translate(200, 85) scale(0.65) translate(-254.5, -194)">
+  <g transform="translate(140, 55) scale(0.45) translate(-254.5, -194)">
     <path 
       d="M 172 119 L 172 267 L 196 267 L 201 262 L 201 172 L 203 169 L 254 217 L 256 217 L 307 169 L 309 172 L 309 262 L 314 267 L 338 267 L 338 119 L 314 119 L 254 170 L 196 119 Z" 
-      fill="#0A4166" 
+      fill="white" 
       fill-rule="evenodd"
     />
     <path 
       d="M 218 210 L 227 249 L 240 259 L 254 258 L 269 258 L 281 249 L 289 210 L 254 227 Z" 
-      fill="#0A4166" 
+      fill="white" 
       fill-rule="evenodd"
     />
   </g>
 
   <!-- ══ WORDMARK ══ -->
   <text
-    x="200"
-    y="215"
+    x="140"
+    y="145"
     text-anchor="middle"
     font-family="'Plus Jakarta Sans', sans-serif"
     font-weight="800"
-    font-size="48"
-    fill="#0A4166"
+    font-size="44"
+    fill="white"
     letter-spacing="5"
   >MAGENOR</text>
 </svg>

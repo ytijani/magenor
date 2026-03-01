@@ -1,6 +1,6 @@
-<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- ══ M MARK (white) from User SVG ══ -->
-  <g transform="translate(200, 85) scale(0.65) translate(-254.5, -194)">
+<svg width="500" height="200" viewBox="0 0 500 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ══ M ICON ══ -->
+  <g transform="translate(60, 100) scale(0.48) translate(-254.5, -194)">
     <path 
       d="M 172 119 L 172 267 L 196 267 L 201 262 L 201 172 L 203 169 L 254 217 L 256 217 L 307 169 L 309 172 L 309 262 L 314 267 L 338 267 L 338 119 L 314 119 L 254 170 L 196 119 Z" 
       fill="#0A4166" 
@@ -15,13 +15,12 @@
 
   <!-- ══ WORDMARK ══ -->
   <text
-    x="200"
-    y="215"
-    text-anchor="middle"
+    x="180"
+    y="118"
     font-family="'Plus Jakarta Sans', sans-serif"
     font-weight="800"
-    font-size="48"
+    font-size="52"
     fill="#0A4166"
-    letter-spacing="5"
+    letter-spacing="4"
   >MAGENOR</text>
 </svg>

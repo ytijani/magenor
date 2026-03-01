@@ -40,6 +40,7 @@ const Services: React.FC = () => {
     const imagesRef = useRef<HTMLDivElement[]>([]);
     const contentWrappersRef = useRef<HTMLDivElement[]>([]);
     const [activeIndex, setActiveIndex] = useState(0);
+    const activeIndexRef = useRef(0);
     const tlRef = useRef<gsap.core.Timeline | null>(null);
 
     useEffect(() => {
@@ -63,7 +64,8 @@ const Services: React.FC = () => {
                             Math.floor(self.progress * sections),
                             sections - 1
                         );
-                        if (index !== activeIndex) {
+                        if (index !== activeIndexRef.current) {
+                            activeIndexRef.current = index;
                             setActiveIndex(index);
                         }
                     },
@@ -78,11 +80,12 @@ const Services: React.FC = () => {
                     const elements = contentWrappersRef.current[i].querySelectorAll('.stagger-elem');
                     gsap.set(elements, { autoAlpha: 0, y: 30 });
 
-                    // Hide images logic with scale for parallax effect
-                    gsap.set(imagesRef.current[i], { autoAlpha: 0 });
-                    gsap.set(imagesRef.current[i].querySelector('img'), { scale: 1.2 });
+                    // Hide images — fully hidden to prevent ghosting
+                    gsap.set(imagesRef.current[i], { autoAlpha: 0, zIndex: 0 });
+                    gsap.set(imagesRef.current[i].querySelector('img'), { scale: 1.15 });
                 } else {
                     // Make sure the first one's elements are visible
+                    gsap.set(imagesRef.current[0], { autoAlpha: 1, zIndex: 1 });
                     const elements = contentWrappersRef.current[0].querySelectorAll('.stagger-elem');
                     gsap.set(elements, { autoAlpha: 1, y: 0 });
                     gsap.set(imagesRef.current[0].querySelector('img'), { scale: 1 });
@@ -103,7 +106,7 @@ const Services: React.FC = () => {
                 const previousContent = contentWrappersRef.current[i - 1];
                 const previousElements = previousContent.querySelectorAll('.stagger-elem');
 
-                // Animate Out Previous
+                // Animate Out Previous — fully hide to prevent ghosting
                 tlRef.current!
                     .to(previousElements, {
                         y: -30,
@@ -118,22 +121,24 @@ const Services: React.FC = () => {
                     }, i - 0.3)
                     .to(previousImgContainer, {
                         autoAlpha: 0,
-                        duration: 1,
-                        ease: 'none'
+                        zIndex: 0,
+                        duration: 0.8,
+                        ease: 'power2.inOut'
                     }, i - 0.5)
 
-                // Animate In Current Sequence
+                // Animate In Current Sequence — bring to front
                 tlRef.current!
                     .to(currentImgContainer, {
                         autoAlpha: 1,
-                        duration: 1,
-                        ease: 'none'
-                    }, i - 0.5)
+                        zIndex: 1,
+                        duration: 0.8,
+                        ease: 'power2.inOut'
+                    }, i - 0.4)
                     .to(currentImg, {
                         scale: 1,
                         duration: 1.5,
                         ease: 'power1.out'
-                    }, i - 0.5)
+                    }, i - 0.4)
                     // Bring in content container
                     .to(currentContent, {
                         y: 0,
@@ -153,7 +158,7 @@ const Services: React.FC = () => {
         }, containerRef);
 
         return () => ctx.revert();
-    }, [activeIndex]);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const scrollToSection = (index: number) => {
         if (!tlRef.current) return;
@@ -185,14 +190,14 @@ const Services: React.FC = () => {
                         key={i}
                         ref={(el) => { if (el) imagesRef.current[i] = el; }}
                         className="absolute inset-0 w-full h-full"
-                        style={{ zIndex: i }}
                     >
                         <img
                             src={service.image}
                             alt={service.title}
                             className="w-full h-full object-cover origin-center transform-gpu"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/70 to-primary/20" />
+                        <div className="absolute inset-0 bg-primary/20" />
                     </div>
                 ))}
             </div>

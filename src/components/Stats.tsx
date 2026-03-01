@@ -102,7 +102,7 @@ const Stats: React.FC = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ delay: 0.1, duration: 0.8 }}
-                                className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-[-0.03em] leading-[1.05] font-display"
+                                className="text-4xl md:text-5xl lg:text-6xl font-black text-primary tracking-[-0.03em] leading-[1.05] font-display"
                             >
                                 Nous travaillons main <br />
                                 <span className="text-primary/15">dans la main pour mener</span> <br />

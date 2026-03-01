@@ -3,18 +3,18 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Pillars from '../components/Pillars';
+// import Stats from '../components/Stats';
 import Footer from '../components/Footer';
-import Projects from '../components/Projects';
 
 const Home: React.FC = () => {
     return (
         <div className="w-full bg-white selection:bg-primary selection:text-white">
             <Header />
-            <main>
+            <main id="main-content">
                 <Hero />
                 <Pillars />
-                <Projects />
                 <Services />
+                {/* <Stats /> */}
             </main>
             <Footer />
         </div>
