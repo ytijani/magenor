@@ -54,7 +54,7 @@ const Location: React.FC = () => {
     return (
         <div className="min-h-screen bg-white text-primary selection:bg-primary selection:text-white">
             {/* Nav Back */}
-            <div className="absolute top-8 left-6 md:left-20 z-50">
+            <div className="fixed top-8 left-6 md:left-20 z-50">
                 <Link
                     to="/"
                     className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-primary transition-all duration-500"
@@ -81,15 +81,7 @@ const Location: React.FC = () => {
                 </motion.div>
 
                 <div className="relative z-10 text-center px-6 max-w-5xl">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8"
-                    >
-                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                        <span className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">+200 engins disponibles</span>
-                    </motion.div>
+                   
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -102,9 +94,9 @@ const Location: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="text-primary text-xl md:text-2xl font-medium max-w-2xl mx-auto"
+                        className="text-white/70 text-xl md:text-2xl font-medium max-w-2xl mx-auto"
                     >
-                        La puissance logistique pour vos chantiers les plus ambitieux en Île-de-France.
+                        La puissance logistique pour vos chantiers les plus ambitieux en Île-de-Maroc.
                     </motion.p>
                 </div>
             </section>

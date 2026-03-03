@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
 @theme {
   --color-primary: #000000;
@@ -41,16 +42,6 @@
 }
 
 @layer components {
-  .container {
-    @apply max-w-[1440px] mx-auto px-6;
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      @apply px-12;
-    }
-  }
-
   .glass-card {
     @apply backdrop-blur-md;
     background: rgba(255, 255, 255, 0.1);

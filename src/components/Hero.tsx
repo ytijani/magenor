@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
     }, []);
 
     return (
-        <section id="hero" className="relative h-screen w-full flex items-start justify-start pt-36 md:pt-44 pb-24 md:pb-32 overflow-hidden bg-primary text-left px-8">
+        <section id="hero" className="relative h-screen w-full flex items-start justify-start pt-36 md:pt-44 pb-24 md:pb-32 overflow-hidden bg-primary text-left">
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full">
+            <div className="relative z-10 w-full px-[5rem] mx-auto">
                 {/* Logo integrated above heading */}
                 <motion.h1
                     initial={{ opacity: 0, y: 40 }}
@@ -126,9 +126,9 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute bottom-0 left-0 right-0 z-10 px-8"
+                className="absolute bottom-0 left-0 right-0 z-10"
             >
-                <div className="w-full flex items-center justify-between py-6 border-t border-white/10">
+                <div className="w-full container flex items-center justify-between py-6 border-t border-white/10">
                     {/* Scroll Indicator */}
                     <div className="hidden md:flex items-center gap-4">
                         <div className="w-[1.5px] h-10 bg-white/15 relative overflow-hidden rounded-full">
@@ -141,7 +141,7 @@ const Hero: React.FC = () => {
                         <span className="text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase">Défiler pour explorer</span>
                     </div>
 
-            
+
                 </div>
             </motion.div>
         </section >

@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
                                     <MapPin size={18} className="text-primary/30 shrink-0 mt-1" />
                                     <p className="text-primary/45 text-[14px] leading-relaxed font-medium">
                                         12 Bis Rue de l'Industrie,<br />
-                                        91210 Draveil, France
+                                        91210 Draveil, Maroc
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-3">
@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
                             © {new Date().getFullYear()} MAGENOR TP & PL. Tous droits réservés.
                         </p>
                         <p className="text-[11px] font-medium text-primary/20">
-                            Entreprise de Travaux Publics — Île-de-France
+                            Entreprise de Travaux Publics — Île-de-Maroc
                         </p>
                     </div>
                 </div>

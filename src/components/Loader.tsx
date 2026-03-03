@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo-white.svg';
 
 const Loader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -56,10 +56,10 @@ const Loader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
     return (
         <div
             ref={containerRef}
-            className="fixed inset-0 z-[9999] bg-[#F0F4F7] flex flex-col items-center justify-center overflow-hidden"
+            className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center overflow-hidden"
         >
             {/* Ambient Background Detail */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0A4166 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+            <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
             <div className="relative flex flex-col items-center gap-12">
                 {/* Logo Wrapper */}
@@ -74,13 +74,13 @@ const Loader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
                 {/* Progress Group */}
                 <div className="flex flex-col items-center gap-4">
                     <div className="flex items-baseline gap-2">
-                        <span ref={counterRef} className="text-[#0A4166] text-5xl md:text-7xl font-black font-display tracking-tight">00</span>
-                        <span className="text-[#0A4166]/20 text-xl font-bold font-display">%</span>
+                        <span ref={counterRef} className="text-white text-5xl md:text-7xl font-black font-display tracking-tight">00</span>
+                        <span className="text-white/20 text-xl font-bold font-display">%</span>
                     </div>
-                    <div className="w-48 h-[2px] bg-[#0A4166]/5 relative overflow-hidden rounded-full">
+                    <div className="w-48 h-[2px] bg-white/10 relative overflow-hidden rounded-full">
                         <div
                             ref={progressRef}
-                            className="absolute top-0 left-0 h-full bg-[#0A4166] w-0 transition-all duration-100 ease-out"
+                            className="absolute top-0 left-0 h-full bg-white w-0 transition-all duration-100 ease-out"
                         />
                     </div>
                 </div>
@@ -88,11 +88,11 @@ const Loader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
 
             {/* Cinematic Overlay Elements */}
             <div className="absolute top-12 left-12 flex flex-col gap-2">
-                <span className="text-[10px] font-black tracking-widest text-[#0A4166]/20 uppercase">Chargement de l'univers Magenor</span>
+                <span className="text-[10px] font-black tracking-widest text-white/20 uppercase">Chargement de l'univers Magenor</span>
             </div>
 
             <div className="absolute bottom-12 right-12">
-                <span className="text-[10px] font-black tracking-widest text-[#0A4166]/10 uppercase">© {new Date().getFullYear()} MAGENOR GROUP</span>
+                <span className="text-[10px] font-black tracking-widest text-white/10 uppercase">© {new Date().getFullYear()} MAGENOR GROUP</span>
             </div>
         </div>
     );

@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
                                 </div>
                                 <div className="space-y-1">
                                     <p className="text-xs font-bold uppercase tracking-widest text-primary/30">Siège Social</p>
-                                    <p className="text-xl font-bold leading-tight">123 Rue de l'Industrie <br /> 75000 Paris, France</p>
+                                    <p className="text-xl font-bold leading-tight">123 Rue de l'Industrie <br /> 75000 Paris, Maroc</p>
                                 </div>
                             </div>
                         </div>

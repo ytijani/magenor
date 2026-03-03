@@ -33,7 +33,7 @@ const Travaux: React.FC = () => {
     return (
         <div className="min-h-screen bg-white text-primary selection:bg-primary selection:text-white">
             {/* Nav Back */}
-            <div className="absolute top-8 left-6 md:left-20 z-50">
+            <div className="fixed top-8 left-6 md:left-20 z-50">
                 <Link
                     to="/"
                     className="group flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 text-white hover:bg-white hover:text-primary transition-all duration-500"
@@ -109,7 +109,7 @@ const Travaux: React.FC = () => {
                             <span className="text-primary/20 italic">bâtir le futur.</span>
                         </h2>
                         <p className="text-xl text-primary/50 leading-relaxed font-medium">
-                            MAGENOR Travaux Publics intervient sur les projets d'infrastructure les plus complexes d'Île-de-France, en combinant puissance mécanique et expertise humaine.
+                            MAGENOR Travaux Publics intervient sur les projets d'infrastructure les plus complexes d'Île-de-Maroc, en combinant puissance mécanique et expertise humaine.
                         </p>
                         <div className="grid grid-cols-2 gap-8 pt-8 border-t border-primary/5">
                             <div className="space-y-2">

@@ -32,7 +32,7 @@ const Header: React.FC = () => {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute top-0 left-0 w-full z-50 py-4 bg-transparent"
             >
-                <div className="flex items-center justify-between w-full px-8">
+                <div className="flex items-center justify-between w-full px-[5rem] mx-auto">
                     <div className="flex items-center gap-12">
                         <Link to="/" className="flex items-center group" aria-label="MAGENOR Accueil">
                             <div className="h-14 md:h-16 w-16 md:w-20 relative overflow-hidden flex items-center justify-start">
