@@ -146,10 +146,10 @@ export const STATUS_CONFIG: Record<DocumentData['status'], {
 
 export const DEFAULT_COMPANY: CompanyInfo = {
   name: 'MAGENOR SARL',
-  address: '12 Bis Rue de l\'Industrie',
-  city: '91210 Draveil, France',
-  phone: '+33 1 89 47 12 34',
-  email: 'contact@magenor.fr',
+  address: '90 BD La Résistance HASSANIA 2 Bloc A 3° Etage',
+  city: 'Mohammedia',
+  phone: '+212 708080894',
+  email: 'magenor.maroc@gmail.com',
   siret: '123 456 789 00012',
   tva: 'FR 12 345678901',
 };

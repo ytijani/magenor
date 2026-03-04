@@ -65,17 +65,17 @@ const Footer: React.FC = () => {
                                 <div className="flex items-start gap-3">
                                     <MapPin size={18} className="text-primary/30 shrink-0 mt-1" />
                                     <p className="text-primary/45 text-[14px] leading-relaxed font-medium">
-                                        12 Bis Rue de l'Industrie,<br />
-                                        91210 Draveil, Maroc
+                                        90 BD La Résistance HASSANIA 2 Bloc A 3° Etage,<br />
+                                        Mohammedia
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Phone size={18} className="text-primary/30 shrink-0" />
-                                    <a href="tel:+33189471234" className="text-primary/45 text-[14px] font-medium hover:text-primary transition-colors">+33 1 89 47 12 34</a>
+                                    <a href="tel:+212708080894" className="text-primary/45 text-[14px] font-medium hover:text-primary transition-colors">+212 708080894</a>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <Mail size={18} className="text-primary/30 shrink-0" />
-                                    <a href="mailto:contact@magenor.fr" className="text-primary/45 text-[14px] font-medium hover:text-primary transition-colors">contact@magenor.fr</a>
+                                    <a href="mailto:magenor.maroc@gmail.com" className="text-primary/45 text-[14px] font-medium hover:text-primary transition-colors">magenor.maroc@gmail.com</a>
                                 </div>
                             </div>
                         </motion.div>

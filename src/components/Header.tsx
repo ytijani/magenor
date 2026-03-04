@@ -78,9 +78,9 @@ const Header: React.FC = () => {
                         </div>
 
                         {/* Contact CTA */}
-                        <a href="tel:+33189471234" className="hidden md:flex items-center gap-2 text-[13px] font-bold text-white/70 hover:text-white transition-colors duration-300">
+                        <a href="tel:+212708080894" className="hidden md:flex items-center gap-2 text-[13px] font-bold text-white/70 hover:text-white transition-colors duration-300">
                             <Phone size={14} />
-                            <span>+33 1 89 47 12 34</span>
+                            <span>+212 708080894</span>
                         </a>
 
                         {/* Mobile Menu Button */}
@@ -148,8 +148,8 @@ const Header: React.FC = () => {
                             </div>
 
                             <div className="space-y-4">
-                                <a href="tel:+33189471234" className="block text-white font-bold text-xl">+33 1 89 47 12 34</a>
-                                <a href="mailto:contact@magenor.fr" className="block text-white/50 font-medium text-sm">contact@magenor.fr</a>
+                                <a href="tel:+212708080894" className="block text-white font-bold text-xl">+212 708080894</a>
+                                <a href="mailto:magenor.maroc@gmail.com" className="block text-white/50 font-medium text-sm">magenor.maroc@gmail.com</a>
                             </div>
                         </motion.div>
                     </motion.div>

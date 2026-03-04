@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
                                 </div>
                                 <div className="space-y-1">
                                     <p className="text-xs font-bold uppercase tracking-widest text-primary/30">Téléphone</p>
-                                    <p className="text-xl font-bold">01 45 67 89 10</p>
+                                    <p className="text-xl font-bold">+212 708080894</p>
                                 </div>
                             </div>
 
@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
                                 </div>
                                 <div className="space-y-1">
                                     <p className="text-xs font-bold uppercase tracking-widest text-primary/30">Email</p>
-                                    <p className="text-xl font-bold">contact@magenor.fr</p>
+                                    <p className="text-xl font-bold">magenor.maroc@gmail.com</p>
                                 </div>
                             </div>
 
@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
                                 </div>
                                 <div className="space-y-1">
                                     <p className="text-xs font-bold uppercase tracking-widest text-primary/30">Siège Social</p>
-                                    <p className="text-xl font-bold leading-tight">123 Rue de l'Industrie <br /> 75000 Paris, Maroc</p>
+                                    <p className="text-xl font-bold leading-tight">90 BD La Résistance HASSANIA 2 Bloc A 3° Etage,<br />Mohammedia</p>
                                 </div>
                             </div>
                         </div>
