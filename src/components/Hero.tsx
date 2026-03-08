@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
     }, []);
 
     return (
-        <section id="hero" className="relative h-screen w-full flex items-center justify-center pt-36 md:pt-44 pb-24 md:pb-32 overflow-hidden bg-primary text-center">
+        <section id="hero" className="relative h-screen w-full flex items-start justify-start pt-36 md:pt-44 pb-24 md:pb-32 overflow-hidden bg-primary text-left">
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -71,13 +71,13 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full px-[5rem] mx-auto flex flex-col items-start">
+            <div className="relative z-10 w-full px-[5rem] mx-auto">
                 {/* Logo integrated above heading */}
                 <motion.h1
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-white text-[clamp(2.5rem,7.5vw,6.5rem)] font-black leading-[1.05] tracking-[-0.03em] mb-6 font-display text-center"
+                    className="text-white text-[clamp(2.5rem,7.5vw,6.5rem)] font-black leading-[1.05] tracking-[-0.03em] mb-6 font-display"
                 >
                     Entreprise de{' '}
                     <br className="hidden md:block" />
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-white/80 text-base md:text-lg lg:text-[20px] max-w-[620px] mb-10 font-medium leading-relaxed text-center"
+                    className="text-white/80 text-base md:text-lg lg:text-[20px] max-w-[620px] mb-10 font-medium leading-relaxed"
                 >
                     Nos expertises au service des acteurs du bâtiment et des travaux publics.
                     Nous travaillons main dans la main pour mener à bien vos projets de location, terrassement et démolition.
@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex items-center justify-center gap-4 flex-wrap"
+                    className="flex items-center gap-4 flex-wrap"
                 >
                     <Link
                         to="/contact"
