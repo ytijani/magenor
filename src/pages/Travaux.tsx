@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Tractor, Hammer, ShieldCheck, Target, Recycle, Zap, HardHat } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import travauxImg from '../assets/travaux-industrial.png';
+import Footer from '../components/Footer';
 
 const Travaux: React.FC = () => {
     useEffect(() => {
@@ -109,7 +110,7 @@ const Travaux: React.FC = () => {
                             <span className="text-primary/20 italic">bâtir le futur.</span>
                         </h2>
                         <p className="text-xl text-primary/50 leading-relaxed font-medium">
-                            MAGENOR Travaux Publics intervient sur les projets d'infrastructure les plus complexes d'Île-de-Maroc, en combinant puissance mécanique et expertise humaine.
+                            MAGENOR Travaux Publics intervient sur les projets d'infrastructure les plus complexes au Maroc, en combinant puissance mécanique et expertise humaine.
                         </p>
                         <div className="grid grid-cols-2 gap-8 pt-8 border-t border-primary/5">
                             <div className="space-y-2">
@@ -204,14 +205,16 @@ const Travaux: React.FC = () => {
                             Lancer une étude
                         </Link>
                         <a
-                            href="tel:+2127892137438"
+                            href="tel:+212708080894"
                             className="bg-white border border-primary/10 text-primary px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest text-center hover:bg-primary hover:text-white transition-all"
                         >
-                            Parler à un expert
+                            +212 708080894
                         </a>
                     </div>
                 </div>
             </section>
+
+            <Footer hideCta />
         </div>
     );
 };

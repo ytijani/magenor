@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Tractor, ShieldCheck, Cog, Gauge, ArrowRight, Wrench, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import locationImg from '../assets/location-industrial.png';
+import Footer from '../components/Footer';
 
 const Location: React.FC = () => {
     useEffect(() => {
@@ -96,7 +97,7 @@ const Location: React.FC = () => {
                         transition={{ delay: 0.5 }}
                         className="text-white/70 text-xl md:text-2xl font-medium max-w-2xl mx-auto"
                     >
-                        La puissance logistique pour vos chantiers les plus ambitieux en Île-de-Maroc.
+                        La puissance logistique pour vos chantiers les plus ambitieux au Maroc.
                     </motion.p>
                 </div>
             </section>
@@ -220,10 +221,12 @@ const Location: React.FC = () => {
                     <p className="text-xl text-primary/50 font-medium">Nos experts vous conseillent sur le choix des machines adaptées à la configuration de votre sol et à vos contraintes de délais.</p>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-10">
                         <Link to="/contact" className="w-full md:w-auto bg-primary text-white px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest hover:bg-primary/80 transition-all">Nous contacter</Link>
-                        <a href="tel:+2127892137438" className="w-full md:w-auto border border-primary/10 px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all">+212 789 213 7438</a>
+                        <a href="tel:+212708080894" className="w-full md:w-auto border border-primary/10 px-12 py-6 rounded-3xl font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all">+212 708080894</a>
                     </div>
                 </div>
             </section>
+
+            <Footer hideCta />
         </div>
     );
 };

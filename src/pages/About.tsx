@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import aboutImg from '../assets/about-industrial.png';
+import Footer from '../components/Footer';
 
 const About: React.FC = () => {
     useEffect(() => {
@@ -77,7 +78,7 @@ const About: React.FC = () => {
                         </div>
                         <div className="space-y-6 text-lg text-primary/70 leading-relaxed font-medium">
                             <p>
-                                Notre parc machine de pointe et notre expertise technique nous permettent de relever les défis les plus complexes. Nous intervenons sur toute l'Ile-de-Maroc avec une réactivité et un professionnalisme reconnus.
+                                Notre parc machine de pointe et notre expertise technique nous permettent de relever les défis les plus complexes. Nous intervenons sur tout le Maroc avec une réactivité et un professionnalisme reconnus.
                             </p>
                             <p>
                                 Choisir MAGENOR, c'est opter pour un partenaire fiable capable de mobiliser les ressources nécessaires pour la réussite de vos chantiers les plus ambitieux.
@@ -110,8 +111,7 @@ const About: React.FC = () => {
                 </motion.div>
             </section>
 
-            {/* Footer space */}
-            <div className="h-20" />
+            <Footer hideCta />
         </div>
     );
 };
