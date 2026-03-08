@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Pillars from '../components/Pillars';
 // import Stats from '../components/Stats';
+import MapSection from '../components/MapSection';
 import Footer from '../components/Footer';
 
 const Home: React.FC = () => {
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
                 <Pillars />
                 <Services />
                 {/* <Stats /> */}
+                <MapSection />
             </main>
             <Footer />
         </div>

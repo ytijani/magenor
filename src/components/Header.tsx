@@ -54,7 +54,7 @@ const Header: React.FC = () => {
                                 >
                                     <Link
                                         to={link.href}
-                                        className="text-[13px] font-bold tracking-[0.2em] uppercase text-white/50 hover:text-white transition-colors duration-300 relative group"
+                                        className="text-[13px] font-bold tracking-[0.2em] uppercase text-white hover:text-white/60 transition-colors duration-300 relative group"
                                     >
                                         {link.name}
                                         <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />

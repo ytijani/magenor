@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Truck, Shovel, HardHat } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import serviceLocation from '../assets/service-location.png';
+import serviceLocation from '../assets/pillar-trucks.png';
 import serviceEarthwork from '../assets/service-earthwork.png';
 import projectDemolition from '../assets/project-demolition-1.png';
 
@@ -196,8 +196,8 @@ const Services: React.FC = () => {
                             alt={service.title}
                             className="w-full h-full object-cover origin-center transform-gpu"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/70 to-primary/20" />
-                        <div className="absolute inset-0 bg-primary/20" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-primary/30" />
                     </div>
                 ))}
             </div>
@@ -206,7 +206,7 @@ const Services: React.FC = () => {
             <div className="relative z-10 h-full max-w-[1440px] mx-auto px-6 md:px-20 flex flex-col justify-center">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
-                    {/* Glassmorphic Text Cards */}
+                    {/* Text Content */}
                     <div className="relative h-[600px] lg:col-span-7 flex flex-col justify-center">
                         {services.map((service, i) => (
                             <div
@@ -214,39 +214,41 @@ const Services: React.FC = () => {
                                 ref={(el) => { if (el) contentWrappersRef.current[i] = el; }}
                                 className="absolute left-0 w-full"
                             >
-                                <div className="bg-white/5 backdrop-blur-[32px] border border-white/10 rounded-[32px] md:rounded-[48px] p-10 md:p-16 shadow-2xl flex flex-col space-y-10 w-full transform-gpu">
+                                <div className="flex flex-col space-y-10 w-full pl-8 md:pl-12 border-l-2 border-white/10">
                                     <div className="stagger-elem flex items-center gap-4">
-                                        <div className="w-12 h-[1px] bg-white/20" />
-                                        <span className="text-[11px] font-bold tracking-[0.3em] text-white/50 uppercase">
+                                        <span className="text-[11px] font-bold tracking-[0.3em] text-white/40 uppercase">
                                             {service.tag}
                                         </span>
+                                        <div className="w-12 h-[1px] bg-white/15" />
                                     </div>
 
-                                    <div className="space-y-6">
-                                        <div className="stagger-elem flex items-center gap-6">
-                                            <div className="w-16 h-16 rounded-[24px] bg-white/10 border border-white/10 flex items-center justify-center text-white shadow-inner shadow-white/5">
-                                                {service.icon}
+                                    <div className="space-y-8">
+                                        <div className="stagger-elem">
+                                            <div className="flex items-center gap-5 mb-3">
+                                                <div className="w-14 h-14 rounded-2xl bg-white/[0.07] border border-white/[0.08] flex items-center justify-center text-white/80">
+                                                    {service.icon}
+                                                </div>
+                                                <h2 className="text-5xl md:text-6xl lg:text-8xl font-black text-white tracking-[-0.04em] font-display leading-[0.95]">
+                                                    {service.title}
+                                                </h2>
                                             </div>
-                                            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter font-display leading-[1.1]">
-                                                {service.title}
-                                            </h2>
                                         </div>
-                                        <p className="stagger-elem text-lg md:text-xl text-white/70 leading-relaxed font-medium max-w-xl text-balance">
+                                        <p className="stagger-elem text-base md:text-lg text-white/55 leading-[1.7] font-medium max-w-lg">
                                             {service.subtitle}
                                         </p>
                                     </div>
 
-                                    <div className="stagger-elem pt-4">
+                                    <div className="stagger-elem pt-2">
                                         <Link
                                             to={i === 0 ? "/location" : i === 1 ? "/travaux" : "/travaux"}
-                                            className="group inline-flex items-center gap-5 bg-white rounded-full pl-8 pr-2 py-2 w-max hover:bg-white/90 transition-all duration-300 shadow-xl shadow-black/10"
+                                            className="group inline-flex items-center gap-4 w-max"
                                         >
-                                            <span className="text-primary font-black text-[12px] tracking-widest uppercase px-2">
+                                            <div className="w-12 h-12 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all duration-500 group-hover:bg-white group-hover:text-primary group-hover:border-transparent">
+                                                <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                                            </div>
+                                            <span className="text-[12px] font-bold tracking-[0.2em] uppercase text-white/50 group-hover:text-white transition-colors duration-500">
                                                 Voir les détails
                                             </span>
-                                            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-105">
-                                                <ArrowRight size={16} />
-                                            </div>
                                         </Link>
                                     </div>
                                 </div>
