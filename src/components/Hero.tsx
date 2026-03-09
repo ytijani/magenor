@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full px-[5rem] mx-auto">
+            <div className="relative z-10 w-full px-4 md:px-10 lg:px-[5rem] mx-auto">
                 {/* Logo integrated above heading */}
                 <motion.h1
                     initial={{ opacity: 0, y: 40 }}
